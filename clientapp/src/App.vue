@@ -2,7 +2,7 @@
   <div id="app">
     <div class="form-wrapper">
       <span>
-        <textarea v-model="message" v-validate="'required'" placeholder="Enter the encrypted text here" />
+        <textarea v-model="message" placeholder="Enter the encrypted text here" />
           Please Select the key size: 
         <select v-model="keySize">          
           <option>1</option>

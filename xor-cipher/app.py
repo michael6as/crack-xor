@@ -1,4 +1,4 @@
-from flask import Flask, request, Response
+from flask import Flask, request
 from flask_cors import CORS
 import json
 
@@ -15,11 +15,12 @@ def crack():
     ascii_arr = json_params['text']
     key_size = int(json_params['keySize'])
     possible_keys = enc.guess_key(ascii_arr, key_size)
+
+    # Couldn't find a nicer way to return the generator to the client...
     all_keys = []
     for key in possible_keys:
         all_keys.append(key)
     return json.dumps(all_keys)
-    # return Response(all_keys)
 
 
 if __name__ == '__main__':

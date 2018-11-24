@@ -3,6 +3,7 @@ import itertools
 class XorEncryptor:
 
     def __init__(self):
+        # Because we know the valid ASCII values we can set them as our valid range
         self.valid_decrypted_range = range(32, 127)
         self.valid_ascii_key_range = range(97, 123)
 
